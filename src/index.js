@@ -31,7 +31,7 @@ const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers,
   context: req => ({
-    ...req,
+    req,
     db: new Graphcool({
       typeDefs: 'src/generated/graphcool.graphql',
       endpoint: 'https://graphcool-us1.graphcool.cloud/public-watersnap-ninja-511883/hackernews-node/dev',
