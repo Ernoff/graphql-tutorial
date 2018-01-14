@@ -1,30 +1,35 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { Graphcool } = require('graphcool-binding')
+const Query = require('./resolvers/Query')
+
+// const resolvers = {
+//   Query: {
+//     feed(parent, args, ctx, info) {
+//       return ctx.db.query.posts({ where: { isPublished: true } }, info)
+//     },
+//   },
+//   Mutation: {
+//     createDraft(parent, { title, text }, ctx, info) {
+//       return ctx.db.mutation.createPost(
+//         // TODO remove `isPublished` in favour of default value
+//         { data: { title, text, isPublished: false } },
+//         info,
+//       )
+//     },
+//     publish(parent, { id }, ctx, info) {
+//       return ctx.db.mutation.updatePost(
+//         {
+//           where: { id },
+//           data: { isPublished: true },
+//         },
+//         info,
+//       )
+//     },
+//   },
+// }
 
 const resolvers = {
-  Query: {
-    feed(parent, args, ctx, info) {
-      return ctx.db.query.posts({ where: { isPublished: true } }, info)
-    },
-  },
-  Mutation: {
-    createDraft(parent, { title, text }, ctx, info) {
-      return ctx.db.mutation.createPost(
-        // TODO remove `isPublished` in favour of default value
-        { data: { title, text, isPublished: false } },
-        info,
-      )
-    },
-    publish(parent, { id }, ctx, info) {
-      return ctx.db.mutation.updatePost(
-        {
-          where: { id },
-          data: { isPublished: true },
-        },
-        info,
-      )
-    },
-  },
+  Query,
 }
 
 const server = new GraphQLServer({

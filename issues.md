@@ -1,5 +1,6 @@
 # Issues encountered
-I will attempt to document all issues I encountered while following tutorial on [graphql](https://www.howtographql.com) 
+
+This is an attempt to document all issues I encountered while following tutorial on [graphql and NodeJs](https://www.howtographql.com) 
 
 1. Failure to deploy ([ERROR] in /home/user/Documents/Projects/graphql/hackernews-node/database/graphcool.yml: Errors while validating graphcool.yml:)
 

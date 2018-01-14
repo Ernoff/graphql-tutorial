@@ -1,10 +1,10 @@
-# import Post from "./generated/graphcool.graphql"
+# import Link from "./generated/graphcool.graphql"
 
 type Query {
-  feed: [Post!]!
+  feed(filter: String, skip: Int, first: Int): [Link!]!
 }
 
 type Mutation {
-  createDraft(title: String!, text: String): Post
-  publish(id: ID!): Post
+  createDraft(title: String!, text: String): Link
+  publish(id: ID!): Link
 }
