@@ -4,6 +4,12 @@ type Link {
   url: String!
 }
 
+type Vote {
+  id: ID! @unique
+  description: String!
+  url: String!
+}
+
 type User {
   id: ID! @unique
   name: String!
