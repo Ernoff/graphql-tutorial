@@ -1,6 +1,7 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { Graphcool } = require('graphcool-binding')
 const Query = require('./resolvers/Query')
+const Mutation = require('./resolvers/Mutation')
 
 // const resolvers = {
 //   Query: {
@@ -30,6 +31,7 @@ const Query = require('./resolvers/Query')
 
 const resolvers = {
   Query,
+  Mutation,
 }
 
 const server = new GraphQLServer({

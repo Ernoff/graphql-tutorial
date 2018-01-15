@@ -5,6 +5,11 @@ type Query {
 }
 
 type Mutation {
-  createDraft(title: String!, text: String): Link
-  publish(id: ID!): Link
+  post(url: String!, description: String!): Link!
+  signup(email: String!, description: String!, name: String!): AuthPayload
+}
+
+type AuthPayload {
+  token: String
+  user: User
 }
